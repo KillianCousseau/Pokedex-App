@@ -1,9 +1,9 @@
 function PokemonCard() {
-  const pokemon = pokemonList[0];
+  const pokemon = pokemonList[1];
 
   const getImg = (object) => {
     if (object.imgSrc) {
-      return <img src={pokemon.imgSrc} alt={pokemon.name} />;
+      return <img src={object.imgSrc} alt={object.name} />;
     } else {
       return <p>???</p>;
     }
