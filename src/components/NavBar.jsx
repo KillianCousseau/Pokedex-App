@@ -1,14 +1,17 @@
-const NavBar = ({
-  pokemonIndex,
-  pokemonList,
-  previousPokemon,
-  nextPokemon,
-}) => {
+const NavBar = ({ pokemonIndex, pokemonList, setPokemonIndex }) => {
+  if (pokemonIndex === 3) {
+    alert("pika pikachu !!!");
+  }
+
   return (
     <>
-      {pokemonIndex > 0 && <button onClick={previousPokemon}>Previous</button>}
+      {pokemonIndex > 0 && (
+        <button onClick={() => setPokemonIndex(pokemonIndex - 1)}>
+          Previous
+        </button>
+      )}
       {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={nextPokemon}>Next</button>
+        <button onClick={() => setPokemonIndex(pokemonIndex + 1)}>Next</button>
       )}
     </>
   );

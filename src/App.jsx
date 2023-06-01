@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
@@ -31,14 +32,7 @@ function App() {
   ];
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
-  const previousPokemon = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  };
-
-  const nextPokemon = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  };
+  useEffect(() => alert("hello pokemon trainer :)"), []);
 
   const pokemon = pokemonList[pokemonIndex];
 
@@ -48,8 +42,7 @@ function App() {
       <NavBar
         pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
-        previousPokemon={previousPokemon}
-        nextPokemon={nextPokemon}
+        setPokemonIndex={setPokemonIndex}
       />
     </div>
   );
