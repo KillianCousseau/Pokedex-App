@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Components.css";
 
 function PokemonCard({ pokemon }) {
   const getImg = (object) => {
@@ -10,9 +11,11 @@ function PokemonCard({ pokemon }) {
   };
 
   return (
-    <figure>
+    <figure className={pokemon.name}>
       {getImg(pokemon)}
-      <figcaption>{pokemon.name}</figcaption>
+      <figcaption>
+        {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+      </figcaption>
     </figure>
   );
 }
