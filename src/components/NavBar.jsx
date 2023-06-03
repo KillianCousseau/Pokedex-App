@@ -6,10 +6,9 @@ const NavBar = ({
 }) => {
   return (
     <>
-      {pokemonIndex > 0 && <button onClick={previousPokemon}>Previous</button>}
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={nextPokemon}>Next</button>
-      )}
+      {pokemonList.map((pokemon) => (
+        <button key={pokemon.name}>{pokemon.name}</button>
+      ))}
     </>
   );
 };
